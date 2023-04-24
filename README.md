@@ -1,4 +1,4 @@
-# Logic App Comsumption. The budget option.
+# Logic App Consumption. The budget option.
 ## "Without Visual Studio Logic App Designer"
 
 Logic App Consumption is Microsoft's low code offering for implementing enterprise integrations. It offers [**Connectors**](https://learn.microsoft.com/en-us/azure/connectors/built-in) which can save you time from building everything yourself.
