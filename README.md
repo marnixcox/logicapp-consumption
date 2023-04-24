@@ -11,7 +11,7 @@ This templates includes a Logic App Consumption deployment and some popular conn
 
 This template utilizes the following Azure resources:
 
-- [**Azure Logic App Consumption**](https://docs.microsoft.com/azure/logic-app/) to design the workflows
+- [**Azure Logic App Consumption**](https://docs.microsoft.com/azure/logic-apps/) to design the workflows
 - [**Azure Monitor**](https://docs.microsoft.com/azure/azure-monitor/) for monitoring and logging
 - [**Azure Key Vault**](https://docs.microsoft.com/azure/key-vault/) for securing secrets
 - [**Azure Service Bus**](https://docs.microsoft.com/azure/service-bus/) for (reliable) messaging
