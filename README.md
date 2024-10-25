@@ -72,10 +72,10 @@ The following connections are currently implemented:
 `azureblob`
 `common data service`
 
-### CI/CD
+### Deployment pipelines
 
 This template includes pipelines for a staged dev/tst/acc/prd deployment for a `develop` and `main` branch. Make sure to update the `serviceConnection` and  `AZURE_SUBSCRIPTION_ID` accordingly. 
 
-
+<img src="assets/cicd.png" width="75%" alt="Deployment">
 
 
