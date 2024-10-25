@@ -27,7 +27,7 @@ Now the magic happens. The template contents will be downloaded into your projec
 
 ### Contents
 
-The following folder structure is created. Where `corelocal` is added to extend the standard set of core infra files.
+The following folder structure is created. 
 
 ```
 ├── infra                      [ Infrastructure As Code files ]
