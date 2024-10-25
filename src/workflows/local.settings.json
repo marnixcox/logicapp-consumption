@@ -1,9 +1,0 @@
-{
-  "IsEncrypted": false,
-  "Values": {
-    "APP_KIND": "workflowapp",
-    "FUNCTIONS_WORKER_RUNTIME": "node",
-    "ProjectDirectoryPath": "c:\\repos\\github\\logicapp-consumption\\src\\workflows",
-    "AzureWebJobsStorage": "UseDevelopmentStorage=true"
-  }
-}

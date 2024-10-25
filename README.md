@@ -34,7 +34,7 @@ The following folder structure is created.
 │   ├── main.bicep             [ Main infrastructure file ]
 │   ├── main.parameters.json   [ Parameters file ]
 │   ├── app                    [ Infra files specifically added for this template ]
-│   └── core                   [ Full set of infra files provided by AzdCli team  ]
+│   └── core                   [ Full set of infra files provided by Azure Developer CLI team ]
 ├── src                        [ Application code ]
 │   └── workflows              [ Azure Logic App Consumption ]
 └── azure.yaml                 [ Describes the app and type of Azure resources ]
