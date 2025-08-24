@@ -32,14 +32,19 @@ The following folder structure is created.
 ```
 ├── infra                      [ Infrastructure As Code files ]
 │   ├── main.bicep             [ Main infrastructure file ]
-│   ├── main.parameters.json   [ Parameters file ]
-│   ├── app                    [ Infra files specifically added for this template ]
-│   └── core                   [ Full set of infra files provided by Azure Developer CLI team ]
+│   └── main.parameters.json   [ Parameters file ]
 ├── src                        [ Application code ]
 │   └── workflows              [ Azure Logic App Consumption ]
+│       └── SalesOrder         [ Example Logic App ]
 └── azure.yaml                 [ Describes the app and type of Azure resources ]
 
 ```
+
+### Key Infrastructure Files
+- `main.bicep` - Main orchestration
+- `monitoring.bicep` - Observability stack
+- `logicapp.bicep` - Logic App Consumption 
+- `keyvault.bicep` - Key Vault
 
 ### Provision Infrastructure and Logic App Consumption
 
@@ -76,6 +81,6 @@ The following connections are currently implemented:
 
 This template includes pipelines for a staged dev/tst/acc/prd deployment for a `develop` and `main` branch. Make sure to update the `serviceConnection` and  `AZURE_SUBSCRIPTION_ID` accordingly. 
 
-<img src="assets/cicd.png" width="75%" alt="Deployment">
+
 
 
