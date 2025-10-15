@@ -43,10 +43,17 @@ The following folder structure is created.
 ```
 
 ### Key Infrastructure Files
+<<<<<<< HEAD
 - `keyvault/keyvault.bicep` - Key Vault
 - `logicapp/consumption.bicep` - Logic App Consumption 
 - `main.bicep` - Main orchestration
 - `monitoring.bicep` - Observability stack
+=======
+- `main.bicep` - Main orchestration
+- `monitoring.bicep` - Observability stack
+- `logicapp.bicep` - Logic App Consumption 
+- `keyvault.bicep` - Key Vault
+>>>>>>> 355390027c682bf8d853fd046992daa1c07fd6d7
 
 ### Provision Infrastructure and Logic App Consumption
 

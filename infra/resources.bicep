@@ -25,7 +25,11 @@ module monitoring './monitoring.bicep' = {
 }
 
 // KeyVault 
+<<<<<<< HEAD
 module keyvault './keyvault/keyvault.bicep' = {
+=======
+module keyvault './keyvault.bicep' = {
+>>>>>>> 355390027c682bf8d853fd046992daa1c07fd6d7
   name: '${deployment().name}-keyvault'
   params: {
     location: location
@@ -36,6 +40,7 @@ module keyvault './keyvault/keyvault.bicep' = {
     logAnalyticsWorkspaceResourceId: monitoring.outputs.logAnalyticsWorkspaceResourceId
   }
 }
+<<<<<<< HEAD
 
 // Logic App parameter file mapping
 var parameterEnvironmentMapping = environmentName == 'prd'
@@ -62,3 +67,5 @@ module logicappla01 './logicapp/consumption.bicep' = {
     commondataservice: true
   }
 }
+=======
+>>>>>>> 355390027c682bf8d853fd046992daa1c07fd6d7
