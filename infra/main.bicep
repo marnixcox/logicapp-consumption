@@ -41,10 +41,7 @@ resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
   tags: tags
 }
 
-<<<<<<< HEAD
 // Deploy all resources into the resource group
-=======
->>>>>>> 355390027c682bf8d853fd046992daa1c07fd6d7
 module resources 'resources.bicep' = {
   scope: rg
   name: 'resources'
@@ -56,37 +53,6 @@ module resources 'resources.bicep' = {
   }
 }
 
-<<<<<<< HEAD
-=======
-var abbrs = loadJsonContent('./abbreviations.json')
-
-// Logic App parameter file mapping
-var parameterEnvironmentMapping = environmentName == 'prd' ? 3
-  : environmentName == 'acc' ? 2: environmentName == 'tst' ? 1 : 0
-
-// Logic App parameters
-var laSalesorderParameters = [
-  json(loadTextContent('../src/workflows/SalesOrder/workflow.parameters.dev.json'))
-  json(loadTextContent('../src/workflows/SalesOrder/workflow.parameters.tst.json'))
-  json(loadTextContent('../src/workflows/SalesOrder/workflow.parameters.acc.json'))
-  json(loadTextContent('../src/workflows/SalesOrder/workflow.parameters.prd.json'))
-]
-
-// Logic App definition
-module logicappla01 './logicapp.bicep' = {
-  name: 'logicappla01'
-  scope: rg
-   params: {
-     definition: json(loadTextContent('../src/workflows/SalesOrder/workflow.json'))
-     parameters: laSalesorderParameters[parameterEnvironmentMapping]
-      name: '${abbrs.logicWorkflows}${resourceToken}-salesorder-${environmentName}' 
-      tags: tags
-      location: location
-      commondataservice: true
-   }
- }
-
->>>>>>> 355390027c682bf8d853fd046992daa1c07fd6d7
 output AZURE_LOCATION string = location
 output AZURE_TENANT_ID string = tenant().tenantId
 output AZURE_RESOURCE_GROUP string = rg.name
