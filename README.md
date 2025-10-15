@@ -31,6 +31,8 @@ The following folder structure is created.
 
 ```
 ├── infra                      [ Infrastructure As Code files ]
+│   ├── keyvault               [ Key Vault files ]
+│   ├── logicapp               [ Logic app files ]
 │   ├── main.bicep             [ Main infrastructure file ]
 │   └── main.parameters.json   [ Parameters file ]
 ├── src                        [ Application code ]
@@ -41,10 +43,10 @@ The following folder structure is created.
 ```
 
 ### Key Infrastructure Files
+- `keyvault/keyvault.bicep` - Key Vault
+- `logicapp/consumption.bicep` - Logic App Consumption 
 - `main.bicep` - Main orchestration
 - `monitoring.bicep` - Observability stack
-- `logicapp.bicep` - Logic App Consumption 
-- `keyvault.bicep` - Key Vault
 
 ### Provision Infrastructure and Logic App Consumption
 

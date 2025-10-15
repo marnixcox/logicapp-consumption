@@ -230,21 +230,6 @@ var serviceBusParameters = servicebus ? {
   }
 } : {} 
 
-resource servicebusNamespace 'Microsoft.ServiceBus/namespaces@2022-01-01-preview' existing =  {
-  name: serviceBusName
-} 
-
-var servicebusdataowner = '090c5cfd-751d-490a-894a-3ce6f1109419' //Azure Service Bus Data Owner
-resource servicebusRoleAssignment 'Microsoft.Authorization/roleAssignments@2020-10-01-preview' = if (servicebus) {
-  name: guid('ra-logic-${servicebusdataowner}')
-  scope: servicebusNamespace
-  properties: {
-    principalType: 'ServicePrincipal'
-    roleDefinitionId: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', servicebusdataowner) 
-    principalId: logicApp.identity.principalId
-  }
-}
-
 // Outputs for use by other modules
 @description('Logic App managed identity')
 output logicAppManagedIdentityId string = logicApp.identity.principalId

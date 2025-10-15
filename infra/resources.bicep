@@ -25,7 +25,7 @@ module monitoring './monitoring.bicep' = {
 }
 
 // KeyVault 
-module keyvault './keyvault.bicep' = {
+module keyvault './keyvault/keyvault.bicep' = {
   name: '${deployment().name}-keyvault'
   params: {
     location: location
@@ -34,5 +34,31 @@ module keyvault './keyvault.bicep' = {
     environmentName: environmentName
     resourceToken: resourceToken
     logAnalyticsWorkspaceResourceId: monitoring.outputs.logAnalyticsWorkspaceResourceId
+  }
+}
+
+// Logic App parameter file mapping
+var parameterEnvironmentMapping = environmentName == 'prd'
+  ? 3
+  : environmentName == 'acc' ? 2 : environmentName == 'tst' ? 1 : 0
+
+// Logic App parameters
+var laSalesorderParameters = [
+  json(loadTextContent('../src/workflows/SalesOrder/workflow.parameters.dev.json'))
+  json(loadTextContent('../src/workflows/SalesOrder/workflow.parameters.tst.json'))
+  json(loadTextContent('../src/workflows/SalesOrder/workflow.parameters.acc.json'))
+  json(loadTextContent('../src/workflows/SalesOrder/workflow.parameters.prd.json'))
+]
+
+// Logic App definition
+module logicappla01 './logicapp/consumption.bicep' = {
+  name: 'logicappla01'
+  params: {
+    definition: json(loadTextContent('../src/workflows/SalesOrder/workflow.json'))
+    parameters: laSalesorderParameters[parameterEnvironmentMapping]
+    name: '${abbrs.logicWorkflows}${resourceToken}-salesorder-${environmentName}'
+    tags: tags
+    location: location
+    commondataservice: true
   }
 }
